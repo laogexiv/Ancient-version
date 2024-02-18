@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>导航页</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            max-width: 750px; /* 最大宽度为5个按钮的宽度之和 */
+            margin: 0 auto; /* 水平居中 */
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+            border-radius: 30px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            animation: moveButton 1s ease-in-out forwards;
+            opacity: 0;
+            flex-basis: calc(20% - 15px); /* 每行5个，占据20%的空间，减去间距 */
+            max-width: calc(20% - 15px); /* 设置最大宽度，使得每个按钮等宽 */
+            /* ... 其他样式 */
+            position: relative;
+            overflow: hidden;
+        }
+
+            .button:nth-child(5n+1) {
+                margin-left: 0; /* 每行第一个按钮的左边距设为0 */
+            }
+
+            .button:nth-child(n) {
+                margin-top: 90px; /* 从第六个按钮开始，设置上边距 */
+            }
+
+            .button:nth-child(n+6) {
+                margin-top: 150px; /* 从第六个按钮开始，设置上边距 */
+            }
+        .button::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+        }
+
+
+        .button:hover::before {
+                opacity: 1;
+        }
+
+
+        .button-icon {
+            background-size: contain;
+            width: 80%;
+            height: 80%;
+        }
+
+        .button1-icon {
+            background-image: url("image1.jpg");
+        }
+
+        .button2-icon {
+            background-image: url("image2.jpg");
+        }
+
+        .button3-icon {
+            background-image: url("image3.jpg");
+        }
+
+        .button4-icon {
+            background-image: url("image4.jpg");
+        }
+
+        .button5-icon {
+            background-image: url("image5.jpg");
+        }
+
+        .button6-icon {
+            background-image: url("image6.jpg");
+        }
+
+        .button7-icon {
+            background-image: url("image7.jpg");
+        }
+
+        .button8-icon {
+            background-image: url("image8.jpg");
+        }
+
+        .button9-icon {
+            background-image: url("image9.jpg");
+        }
+
+        .button10-icon {
+            background-image: url("image10.jpg");
+        }
+
+        /* 添加其他按钮的样式和背景图像 */
+
+        .avatar {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background-image: url("image11.jpg");
+            background-size: contain;
+            opacity: 0;
+            animation: moveAvatar 1s ease-in-out forwards;
+        }
+
+        @keyframes moveButton {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes moveAvatar {
+            0% {
+                opacity: 0;
+                transform: translateY(200px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="button-container">
+        <!-- 添加按钮元素 -->
+        <a href="http://www.laogexiv.freeee.cf/Animated-Profile-Card-master/index.html" class="button button1-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="https://chat18.aichatos.xyz/#/chat" class="button button2-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button3-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button4-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button5-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button6-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button7-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button8-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button9-icon">
+            <div class="button-icon"></div>
+        </a>
+        <a href="#" class="button button10-icon">
+            <div class="button-icon"></div>
+        </a>
+    </div>
+
+    <div class="avatar"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function drawGradient() {
+                var gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                gradient.addColorStop(0, '#FFC0CB');
+                gradient.addColorStop(1, '#ADD8E6');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+            function init() {
+                resizeCanvas();
+                drawGradient();
+            }
+
+            window.addEventListener('resize', function () {
+                resizeCanvas();
+                drawGradient();
+            });
+
+            init();
+
+            // 触发按钮和头像的动画效果
+            var buttons = document.querySelectorAll('.button');
+            var avatar = document.querySelector('.avatar');
+
+            setTimeout(function () {
+                avatar.style.opacity = '1';
+                avatar.style.transform = 'translateY(0)';
+            }, 500);
+
+            buttons.forEach(function (button, index) {
+                setTimeout(function () {
+                    button.style.opacity = '1';
+                    button.style.transform = 'translateY(0)';
+                }, 500 + (index + 1) * 100);
+            });
+        });
+    </script>
+</body>
+</html>
