@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(to right, #FFC0CB, #ADD8E6);
+}
+
+.mail {
+
+
+    /* 您可以根据需要更改这个值 */
+    padding: 10px;
+    /* 您也可以根据需要更改这个值 */
+    /* 您可以更改背景颜色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    transition: background-color 0.5s ease;
+
+}
+
+.birthday {
+    font-size: 500%;
+    color: #4671ff;
+    font-family: 隶书;
+    animation: movesquare2 1.5s ease-in-out forwards;
+}
+
+.birthday:hover {
+    color: #3451b0;
+}
+
+.text {
+    border-radius: 10px;
+    /* 您可以根据需要更改这个值 */
+    /* 您也可以根据需要更改这个值 */
+    /* 您可以更改背景颜色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    background: white;
+    transition: background-color 0.5s ease;
+    font-size: 200%;
+    animation: movesquare2 1.5s ease-in-out forwards;
+    font-family: 方正姚体;
+}
+
+.text:hover {
+    background-color: #d5d5d5;
+}
+
+
+@keyframes movesquare2 {
+    0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0.0;
+        color: rgb(216, 164, 99);
+    }
+
+    75% {
+        width: 50%;
+        height: 50%;
+        opacity: 1.0;
+    }
+
+    100% {
+        width: 75%;
+        height: 75%;
+        opacity: 1.0;
+    }
+}

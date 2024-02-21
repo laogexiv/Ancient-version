@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(to right, #FFC0CB, #ADD8E6);
+}
+
+.mail {
+    border-radius: 10px;
+    background: white;
+    width: 60%;
+    height: 40%;
+}

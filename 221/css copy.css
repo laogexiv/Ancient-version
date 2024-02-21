@@ -1,0 +1,103 @@
+body {
+    background: linear-gradient(to right, #FFC0CB, #ADD8E6);
+}
+
+.rounded-square1 {
+    border-radius: 10px;
+    /* 您可以根据需要更改这个值 */
+    padding: 10px;
+    /* 您也可以根据需要更改这个值 */
+    background-color: white;
+    /* 您可以更改背景颜色 */
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaaaaa;
+    transition: background-color 0.5s ease;
+    font-size: 300%;
+    text-align: center;
+}
+
+.rounded-square1:hover {
+    background-color: #d5d5d5;
+}
+
+.rounded-square2 {
+    border-radius: 10px;
+    /* 您可以根据需要更改这个值 */
+    padding: 10px;
+    /* 您也可以根据需要更改这个值 */
+    background-color: white;
+    /* 您可以更改背景颜色 */
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaaaaa;
+    transition: background-color 0.5s ease;
+    font-size: 300%;
+    text-align: center;
+    animation: movesquare2 1.5s ease-in-out forwards;
+}
+
+@keyframes movesquare2 {
+    0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0.0;
+        color: rgb(216, 164, 99);
+    }
+
+    75% {
+        width: 50%;
+        height: 50%;
+        opacity: 1.0;
+    }
+
+    100% {
+        width: 75%;
+        height: 75%;
+        opacity: 1.0;
+    }
+}
+
+
+.rounded-square2:hover {
+    background-color: #d5d5d5;
+}
+
+.text {
+    animation: text 1s ease-in-out forwards;
+    width: 0%;
+    height: 0%;
+    opacity: 0.0;
+}
+
+@keyframes text {
+    0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0.0;
+    }
+
+    75% {
+        width: 50%;
+        height: 50%;
+        opacity: 1.0;
+    }
+
+    100% {
+        width: 75%;
+        height: 75%;
+        opacity: 1.0;
+    }
+}
+
+.text-biedianwo {}
+
+.text-mingwen {}
